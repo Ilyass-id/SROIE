@@ -37,7 +37,7 @@ https://static.e-olymp.com/content/98/98c8b20bea775e0a41202ee25564d6f1e777daf2.j
 - To be clear, imagine for the image 151515.jpg, 300 boxes were infered with the text detector (differentiable binarization)
 - We create 300 little pictures of the cropped images that we put in the folder '/home/jupyter/Clova/demo_image/' 
 
-'''python
+```python
 image_folder = "/home/jupyter/DB/DB/datasets/SROIE/test_images/"
 
 for file in filenames:
@@ -64,4 +64,4 @@ for file in filenames:
             cv2.imwrite(path + filename, crop_img)
         except:
             continue
-'''
+```
