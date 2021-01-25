@@ -1,0 +1,14 @@
+# System files
+.**/
+
+
+#All jpg files
+*.jpg
+
+#Jupyter tutorials
+tutorials/
+
+# Except these folders
+!Clova/
+!DB/
+!.gitignore
