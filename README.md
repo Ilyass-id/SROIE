@@ -1,19 +1,19 @@
-# Deep Learning Assignement
+# Deep Learning Assignement :art:
 
-## Structure of the repository
+## Structure of the repository :pushpin:
 
 The repository is composed of two parts : 
 
 - DB/DB
 - ClovaAI
 
-### DB 
+### DB :zap:
 
 Here you'll find the main notebook we used for the study : Receipt2BB.ipynb
 
 In this notebook, you'll find :
 
-#### The Data Handling of the SROIE dataset that we downloaded here (https://rrc.cvc.uab.es/?ch=13)
+#### The Data Handling of the SROIE dataset that we downloaded here (https://rrc.cvc.uab.es/?ch=13) :globe_with_meridians: 
 
 - Removed images without groundtruth or groudtruth without their images.
 - Removed duplicates : there are many duplicates in the dataset with the same filename :  (X11111111.jpg, X11111111(1).jpg, X11111111(2).jpg)
@@ -24,15 +24,15 @@ In this notebook, you'll find :
 https://static.e-olymp.com/content/98/98c8b20bea775e0a41202ee25564d6f1e777daf2.jpg
 
 
-#### Training 
+#### Training :recycle:
 
  - Wrote the sroie_resnet18_deform_thre.yaml file in experiments
  
-#### Text detection over all test images of SROIE
+#### Text detection over all test images of SROIE :package:
 
 - Let's now infer all SROIE test images
 
-#### Cropping of each bounding box 
+#### Cropping of each bounding box :pencil2:
 
 - To be clear, imagine for the image 151515.jpg, 300 boxes were infered with the text detector (differentiable binarization)
 - We create 300 little pictures of the cropped images that we put in the folder '/home/jupyter/Clova/demo_image/' 
@@ -65,3 +65,26 @@ for file in filenames:
         except:
             continue
 ```
+
+- We finally get 360 folders full of cropped images for the 360 test images 
+
+### Clova :memo:
+
+#### Text recognition over the cropped images :card_file_box:
+
+- In the folder ClovaAI, you'll find a script I wrote to infer text over each bounding box and put it in a text file (Clova/BB2text.py)
+
+- We launch the file BB2text.py that I wrote in order to write down the predictions the way we want
+
+
+- Here's the format that we get : ("x1, y1, x2, y2, x3, y3, x4, y4, detection_probability, word, recognition_probability")
+
+#### From words to sentences :speech_balloon:
+
+- We used a "nearest neighbor" methodology in order to put together the words that we estimate from the same sentence 
+
+This means that we have to the following steps :
+- measure the maximal vertical size of the word : max(y3-y1)
+- Find the closest word of word 1
+- if right distance is inferior to the vertical height multiplied by 1.5 : add it to the right of the word
+- if left distance is inferior to the vertical height multiplied by 1.5 : add it to the left of the word
