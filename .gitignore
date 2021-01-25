@@ -1,0 +1,19 @@
+# System files
+.**/
+_**/
+
+#All jpg files
+*.jpg
+*.txt
+*.pth
+*.ipynb
+
+#Jupyter tutorials
+tutorials/
+
+# Except these folders
+!Clova/
+!DB/
+!Receipts2BB.ipynb
+!.gitignore
+!requirements.txt
