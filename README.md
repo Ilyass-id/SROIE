@@ -1,5 +1,10 @@
 # Deep Learning Assignement :art:
 
+## Final project presentation (Video)
+
+https://www.loom.com/share/447b6d02173b4f60abe42c4022654b67
+
+
 ## Structure of the repository :pushpin:
 
 The repository is composed of two parts : 
