@@ -2,7 +2,7 @@
 
 ## Final project presentation (Video)
 
-Presentation of the project(https://www.loom.com/share/447b6d02173b4f60abe42c4022654b67)
+Presentation of the project [https://www.loom.com/share/447b6d02173b4f60abe42c4022654b67]
 
 
 ## Structure of the repository :pushpin:
